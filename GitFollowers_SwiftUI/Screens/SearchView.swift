@@ -9,7 +9,7 @@ import SwiftUI
 
 struct SearchView: View {
     
-    @State private var username = ""
+    @State var username = ""
     
     var body: some View {
         NavigationView {
@@ -27,12 +27,10 @@ struct SearchView: View {
                 
                 Spacer()
                 
-                NavigationLink(destination: FollowerListView()) {
-                    Button(action: {}) {
+                NavigationLink(destination: FollowerListView(username: $username)) {
                         Text("Search")
-                    }
-                    .greenButtonMod()
                 }
+                .greenButtonMod()
                 
                 Spacer()
             }

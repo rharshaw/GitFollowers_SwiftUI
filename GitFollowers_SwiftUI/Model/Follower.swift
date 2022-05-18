@@ -7,7 +7,8 @@
 
 import Foundation
 
-struct Follower: Codable {
+struct Follower: Identifiable, Hashable, Codable {
+    let id = UUID()
     let login: String
     let avatarUrl: String
 }

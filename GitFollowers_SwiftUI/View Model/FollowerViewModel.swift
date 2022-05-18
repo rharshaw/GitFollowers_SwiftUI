@@ -8,9 +8,10 @@
 import Foundation
 
 
-class NetworkManager: ObservableObject {
+class FollowerViewModel: ObservableObject {
     
-    static let shared = NetworkManager()
+    static let shared = FollowerViewModel()
+    @Published var followers = [Follower]()
     
     let baseURL = "https://api.github.com/users/"
     var session = URLSession.shared
@@ -21,7 +22,7 @@ class NetworkManager: ObservableObject {
         
         guard let url = URL(string: baseURL + endPoint) else { return }
         
-        let task = URLSession.shared.dataTask(with: url) { data, _, error in
+        let task = URLSession.shared.dataTask(with: url) { [weak self] data, _, error in
             guard let data = data, error != nil else { return }
             
             let decoder = JSONDecoder()
@@ -30,6 +31,9 @@ class NetworkManager: ObservableObject {
                 let followers = try decoder.decode([Follower].self, from: data)
                 print("\(followers.count)")
                 completed(.success(followers))
+                DispatchQueue.main.async {
+                    self?.followers = followers
+                }
             } catch {
                 completed(.failure(NetworkError.invalidData))
                 print("DEBUG: Error! No data.")
