@@ -8,29 +8,25 @@
 import SwiftUI
 
 struct FollowerListView: View {
+    let threeColumns = [GridItem(), GridItem(), GridItem()]
     @Binding var username: String
-    @ObservedObject var viewModel = FollowerViewModel()
+    @StateObject var viewModel = FollowerViewModel()
     
     var body: some View {
-        NavigationView {
-            ForEach(viewModel.followers) { follower in
-                Text("\(follower.login)")
-            }
-        }
-        .onAppear {
-            getFollowers()
+            ScrollView {
+                LazyVGrid(columns: threeColumns) {
+                    ForEach(viewModel.followers, id: \.self) { follower in
+                            FollowerData(urlString: follower.avatarUrl, followerUsername: follower.login, data: nil)
+                    }
+                }
+                   .onAppear {
+                    getFollowers()
+               }
             }
     }
     
     func getFollowers() {
-        viewModel.getFollower(username: username, page: 1) { result in
-            switch result {
-            case .success(let followers):
-                print(followers)
-            case .failure:
-                print("DEBUG: Error loading data due to \(NetworkError.invalidData).")
-            }
-        }
+        viewModel.getFollower(username: username, page: 1)
     }
 }
 

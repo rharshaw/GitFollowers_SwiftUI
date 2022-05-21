@@ -24,6 +24,8 @@ struct SearchView: View {
                     .padding(.horizontal, 40)
                     .font(.title2)
                     .textFieldStyle(.roundedBorder)
+                    .disableAutocorrection(true)
+                    .multilineTextAlignment(.center)
                 
                 Spacer()
                 

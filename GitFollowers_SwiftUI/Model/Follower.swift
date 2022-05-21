@@ -6,9 +6,9 @@
 //
 
 import Foundation
+import SwiftUI
 
-struct Follower: Identifiable, Hashable, Codable {
-    let id = UUID()
+struct Follower: Hashable, Codable {
     let login: String
     let avatarUrl: String
 }

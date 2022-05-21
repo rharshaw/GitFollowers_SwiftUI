@@ -19,6 +19,7 @@
 		961733EB282F13C700D62100 /* FollowerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961733EA282F13C700D62100 /* FollowerViewModel.swift */; };
 		961733ED282F142C00D62100 /* Follower.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961733EC282F142C00D62100 /* Follower.swift */; };
 		961733EF282F197800D62100 /* GitFollowerError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 961733EE282F197800D62100 /* GitFollowerError.swift */; };
+		96A52BEA283891C500E77FDF /* FollowerData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 96A52BE9283891C500E77FDF /* FollowerData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -35,6 +36,7 @@
 		961733EA282F13C700D62100 /* FollowerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerViewModel.swift; sourceTree = "<group>"; };
 		961733EC282F142C00D62100 /* Follower.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Follower.swift; sourceTree = "<group>"; };
 		961733EE282F197800D62100 /* GitFollowerError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GitFollowerError.swift; sourceTree = "<group>"; };
+		96A52BE9283891C500E77FDF /* FollowerData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowerData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +91,7 @@
 		961733D9282EAFB500D62100 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				96A52BE9283891C500E77FDF /* FollowerData.swift */,
 				961733CD282EAF9E00D62100 /* ContentView.swift */,
 				961733DD282EB04300D62100 /* FollowerListView.swift */,
 				961733DF282EB05000D62100 /* FavoritesListView.swift */,
@@ -227,6 +230,7 @@
 				961733EF282F197800D62100 /* GitFollowerError.swift in Sources */,
 				961733DE282EB04300D62100 /* FollowerListView.swift in Sources */,
 				961733CC282EAF9E00D62100 /* GitFollowers_SwiftUIApp.swift in Sources */,
+				96A52BEA283891C500E77FDF /* FollowerData.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
